@@ -3,10 +3,8 @@ import Vapor
 func routes(_ app: Application) throws {
     
     // MARK: /
-    app.get { req async in
-        "Vapor ok!"
-    }
+    try app.register(collection: MainViewController())
     
     // MARK: /api
-    try app.register(collection: JSONPlaceholder())
+    try app.register(collection: JSONPlaceholderController())
 }

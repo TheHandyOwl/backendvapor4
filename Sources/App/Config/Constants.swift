@@ -13,5 +13,6 @@ final class Constants {
     // MARK: Directories
     static var mainDirectoryConfiguration: DirectoryConfiguration { DirectoryConfiguration.detect() }
     static var workingDirectory: String { Constants.mainDirectoryConfiguration.workingDirectory }
-    static var jsonFakesDirectory: String { "Sources/App/Resources/Fakes/JSON" }
+    // static var jsonFakesDirectory: String { "Sources/App/Resources/Fakes/JSON" }
+    static var jsonFakesDirectory: String { "Resources/Fakes/JSON" }
 }

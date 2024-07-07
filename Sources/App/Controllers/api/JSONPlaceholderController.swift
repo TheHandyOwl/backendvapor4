@@ -1,5 +1,5 @@
 //
-//  JSONPlaceholder.swift
+//  JSONPlaceholderController.swift
 //
 //
 //  Created by Carlos Company on 5/7/24.
@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-struct JSONPlaceholder: RouteCollection {
+struct JSONPlaceholderController: RouteCollection {
     
     func boot(routes: any RoutesBuilder) throws {
         let jsonplaceholder = routes.grouped("api", "jsonplaceholder")
