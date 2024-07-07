@@ -16,10 +16,14 @@ struct MainViewController: RouteCollection {
     
     @Sendable
     func mainView(req: Request) async throws -> View {
-        try await req.view.render(
+        let time = Date()
+        let dateComponents = Calendar.autoupdatingCurrent.dateComponents([.weekday], from: time)
+        let weekend = dateComponents.weekday == 1 || dateComponents.weekday == 7
+        return try await req.view.render(
             "index.leaf",
             [
-                "time": "\(Date().formatted(date: .complete, time: .complete))",
+                "time": "\(time.formatted(date: .complete, time: .complete))",
+                "weekday": "\(weekend)",
                 "title": "Vapor rocks!"
             ]
         )
